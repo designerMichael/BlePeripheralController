@@ -1,0 +1,4 @@
+include ':app'
+include ':common'
+rootProject.name = "BlePeripheralController"
+include ':mars_xlog'

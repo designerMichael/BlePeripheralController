@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        // JitPack 远程仓库：https://jitpack.io
+        maven { url 'https://jitpack.io' }
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.0"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        //打包上传依赖【必需】
+       // classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.9.7"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        // JitPack 远程仓库：https://jitpack.io
+        maven { url 'https://jitpack.io' }
+
+    }
+
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

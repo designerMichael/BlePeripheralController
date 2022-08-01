@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_gravity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="gravity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_accel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="accel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gravity" />
+
+
+    <TextView
+        android:id="@+id/tv_gyro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="gyro"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_accel" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Tips:\n
+ 日志保存于/sdcard/Android/data/\n
+          com.example.androidimu/files/xlog/ \n
+ 操作步骤：\n
+  1.点击Start 启动日志写入功能；\n
+  2.点击Stop,日志缓存写入到文件中;\n
+  3.拷贝日志文件到PC，调用python文件解码；\n
+  4.点击Delete删除日志文件\n
+  [考虑到日志文件是append模式]"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gyro" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_ble_broadcast"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Start Ble Broadcast"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tips" />
+
+            <Button
+                android:id="@+id/btn_ble_send_data"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Ble Send Data"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ble_broadcast" />
+
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Start Record"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ble_send_data" />
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Stop Record"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_start" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Delete Record"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_stop" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
